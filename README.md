@@ -12,7 +12,7 @@ By default, the resque exporter collects metrics from redis://localhost:6379. Yo
 
 If `REDIS_URL` environment variable is given, it takes precedence over the `--redis.url` flag.
 
-    REDIS_URL=unix:///var/run/redis.sock ./resque_exporter
+If `REDIS_NAMESPACE` environment variable is given, it takes precedence over the `--redis.namespace` flag.
 
 If your Resque is using a non-default namespace (default is `resque`) to prefix its Redis keys, specify the namespace using the `--redis.namespace` flag.
 
@@ -35,9 +35,9 @@ If your Resque is using a non-default namespace (default is `resque`) to prefix 
 
 ### Docker
 
-You can deploy the resque exporter using the [kaorimatz/resque-exporter](https://hub.docker.com/r/kaorimatz/resque-exporter/) Docker image.
+You can deploy the resque exporter using the [anbudansri/resque-exporter](https://hub.docker.com/r/anbudansri/resque-exporter/) Docker image.
 
-    docker run -d -p 9447:9447 kaorimatz/resque-exporter --redis.url redis://redis.example.com:6379
+    docker run -d -p 9447:9447 anbudansri/resque-exporter --redis.url redis://redis.example.com:6379
 
 ## Metrics
 
