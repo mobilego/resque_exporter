@@ -284,6 +284,10 @@ func main() {
 	if u := os.Getenv("REDIS_URL"); len(u) > 0 {
 		*redisURL = u
 	}
+	
+	if namespace := os.Getenv("REDIS_NAMESPACE"); len(namespace) > 0 {
+		*redisNamespace = namespace
+	}
 
 	exporter, err := NewExporter(*redisURL, *redisNamespace)
 	if err != nil {
