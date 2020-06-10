@@ -11,4 +11,4 @@ MAINTAINER Satoshi Matsumoto <kaorimatz@gmail.com>
 COPY --from=builder /resque_exporter /bin/resque_exporter
 
 EXPOSE 9447
-ENTRYPOINT ["/bin/resque_exporter --redis.url redis://localhost:6379/0 --redis.namespace loki" ]
+ENTRYPOINT ["/bin/resque_exporter" ]
